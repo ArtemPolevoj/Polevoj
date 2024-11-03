@@ -1,11 +1,11 @@
 ## Примеры запросов CURL
 ### Получение списка студентов
 
-curl -X GET http://localhost:8080/api/students \
+curl -X GET http://localhost:8080/students \
 -H 'Authorization: Bearer <ACCESS_TOKEN>'
 ### Создание нового студента
 
-curl -X POST http://localhost:8080/api/students \
+curl -X PUT http://localhost:8080/students \
 -H 'Content-Type: application/json' \
 -H 'Authorization: Bearer <ACCESS_TOKEN>' \
 -d '{
@@ -17,7 +17,7 @@ curl -X POST http://localhost:8080/api/students \
 }'
 ### Обновление существующего студента
 
-curl -X PUT http://localhost:8080/api/students/<STUDENT_ID> \
+curl -X POST http://localhost:8080/students/<STUDENT_ID> \
 -H 'Content-Type: application/json' \
 -H 'Authorization: Bearer <ACCESS_TOKEN>' \
 -d '{
@@ -29,5 +29,5 @@ curl -X PUT http://localhost:8080/api/students/<STUDENT_ID> \
 }'
 ### Удаление студента
 
-curl -X DELETE http://localhost:8080/api/students/<STUDENT_ID> \
+curl -X DELETE http://localhost:8080/students/<STUDENT_ID> \
 -H 'Authorization: Bearer <ACCESS_TOKEN>'
