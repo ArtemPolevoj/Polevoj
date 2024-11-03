@@ -1,5 +1,20 @@
 spring:
   application:
     name: Polevoj
+
+  data:
+    mongodb:
+      uri: ${MONGO_URI}
+      host: localhost
+      port: 27017
+      database: mydatabase
+      username: admin
+      password: password
 server:
   port: ${PORT:8080}
+
+applicaion:
+  users-config:
+    username: user
+    password: password
+    roles: USER
