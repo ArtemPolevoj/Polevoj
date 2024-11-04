@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.testTaskSmartDeltaSystems.Polevoj.controller.StudentController;
 import com.testTaskSmartDeltaSystems.Polevoj.model.Student;
 import com.testTaskSmartDeltaSystems.Polevoj.service.StudentService;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -152,4 +153,9 @@ class StudentControllerTest {
         mockMvc.perform(delete("/students/12345"))
                 .andExpect(status().isNotFound());
     }
+    @AfterEach
+    public void resetDb() {
+        studentService.deleteAllStudents();
+    }
+
 }

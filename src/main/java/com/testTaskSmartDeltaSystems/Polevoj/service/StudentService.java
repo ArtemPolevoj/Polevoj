@@ -36,4 +36,7 @@ public class StudentService {
     public void deleteStudent(String id) {
         studentRepository.deleteById(id);
     }
+    public void deleteAllStudents() {
+        studentRepository.deleteAll();
+    }
 }
